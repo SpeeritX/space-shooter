@@ -1,6 +1,15 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "root": true,
+  "env": { "browser": true, "es2023": true, "node": true },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "ignorePatterns": ["dist", "src/**/*.css.d.ts"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react-refresh"],
   "rules": {
     "react-refresh/only-export-components": [
       "warn",
