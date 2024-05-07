@@ -3,7 +3,7 @@ import { Scene } from "phaser"
 
 export class MainMenu extends Scene {
   logoTween: Phaser.Tweens.Tween | null = null
-  logo: Phaser.GameObjects.Image
+  logo: Phaser.GameObjects.Image | undefined
 
   constructor() {
     super("MainMenu")
@@ -55,8 +55,8 @@ export class MainMenu extends Scene {
         onUpdate: () => {
           if (reactCallback) {
             reactCallback({
-              x: Math.floor(this.logo.x),
-              y: Math.floor(this.logo.y),
+              x: Math.floor(this.logo?.x || 0),
+              y: Math.floor(this.logo?.y || 0),
             })
           }
         },

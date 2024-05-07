@@ -1,10 +1,7 @@
-"use client"
-
 import { useEffect, useLayoutEffect, useRef } from "react"
 import StartGame from "./main"
 import { EventBus } from "./EventBus"
-
-export const Game = () => {
+const Game = () => {
   const game = useRef<Phaser.Game>()
 
   // Create the game inside a useLayoutEffect hook to avoid the game being created outside the DOM
@@ -33,3 +30,5 @@ export const Game = () => {
 
   return <div id="game-container"></div>
 }
+
+export default Game
